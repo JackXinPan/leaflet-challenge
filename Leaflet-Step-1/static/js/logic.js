@@ -49,7 +49,7 @@ var geojsonMarkerOptions = {
 //Create map function
 function createMap(earthquakes) {
 
-    // Define streetmap and darkmap layers
+    // Define streetmap our multiple layers
     var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
       attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
       tileSize: 512,
@@ -99,11 +99,15 @@ function createMap(earthquakes) {
       var div = L.DomUtil.create("div", "info legend");
       var grades = [0, 1, 2, 3, 4, 5];
       var colors = ["#87F619", "#D0F0B0", "#E2CA87", "#F4840C","#F85533", "#990000"];
-      grades.forEach(function(grade, i) {     //loop to label the legend
+      
+       //loop to label the legend
+       
+       grades.forEach(function(grade, i) {    
         div.innerHTML +=
-        "<i style='background: " + colors[i] + "'></i> " +
-        grade + (grades[i + 1] ? "-" + grades[i + 1] + "<br>" : "+");
+        "<div style=\'background: " + colors[i] + "'></i> " +
+        "<h2> <b> Magnitude: " + grade + (grades[i + 1] ? "-" + grades[i + 1] + "<br>" : "+");
     });
+    
     
     return div;
 

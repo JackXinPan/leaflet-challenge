@@ -129,4 +129,7 @@ dmypy.json
 .pyre/
 
 
-config.py
+Leaflet-Step-2/static/js/config.py
+
+
+Leaflet-Step-1/static/js/config.py
